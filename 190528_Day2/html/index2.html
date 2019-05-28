@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        <!--6.상위 객체에 의해 상속된 속성-->
+        div {
+            color: red;
+        }
+
+         <!--5.태그 선택자로 지정한 속성-->
+        h1 {
+            color: blue;
+        }
+
+        <!--4.클래스 이름으로 지정한 속성-->
+        .hello {
+            color: brown;
+        }
+
+        <!--3.id 이름으로 지정한 속성-->
+        #myid {
+            color: yellow;
+        }
+
+        <!--2. 태그 내에서 직접 style로 지정한 속성(40번째 줄 참고) -->
+
+        <!--1. 속성값 뒤에 !important를 붙인 속성-->
+        h1 {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id = "myid" class="hello">Hello, Ara!</h1>
+        <!--2. 태그 내에서 직접 style로 지정한 속성-->
+        <h1 class="hello" style="color:green;">Hello, Ara!</h1>
+    </div>
+</body>
+</html>

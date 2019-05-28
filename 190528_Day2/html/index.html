@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hello word </title>
+        <style>
+            /* CSS 주석 */
+
+            /* 1. tag name */
+            /*선택자(header) 태그의 색(속성)을 빨강(값)으로*/
+            header {
+                color: red;
+                font-size: 20px;
+            }
+
+            /* 2. select all */
+            /* *--> 전체 적용 */
+            * {
+                margin: 0;  // element 밖의 여백
+                padding: 0; // 자신의 여백
+            }
+
+            /* 3. id selector */
+            #foot {
+                background-color: black;
+                color: white;
+            }
+
+            /* 4. class selector */
+            .art {
+                font-size: 30px;
+                color: green;
+            }
+
+            /* 5. parent child */
+            /* ol의 자식 태그인 li 태그에 적용 */
+            ol > li {
+                color: yellow;
+            }
+            p > i > b {   /* p b: 모든 p 태그 안의 모든 b 태그 */
+                color: gray;
+                color: gray;
+            }
+
+        </style>
+        <link rel="stylesheet" href="index.css"> <!-- css 파일을 만들어 style 적용 -->
+    </head>
+    <body>
+
+        <!--시맨틱태그-->
+        <header id = "header">header</header>
+        <nav style="color: blue;">nav</nav> <!-- style 바로 적용 가능 -->
+        <aside>aside</aside>
+        <section>section
+            <article class="art">article</article>
+            <article class="art">article</article>
+            <article class="art">article</article>
+        </section>
+        <footer id="foot">footer</footer>
+
+        <!-- non semantic tag-->
+        <div>
+            div
+        </div>
+        <!-- heading(제목 태그)-->
+        <h1> Hi, there!</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+
+        <!-- 본문 -->
+        <p>
+            본문1<br> <!--줄바꿈 -->
+            본문4<hr> <!-- 줄바꿈 + 줄로 구분 -->
+        </p>
+        <p>본문2</p>
+        <p>본문3</p>
+
+    <!-- 글자 꾸미기 -->
+        <p>
+            이 글씨는 <b>굵은 글씨</b>입니다. <br>
+            이 글씨는 <strong>굵은 글씨</strong>입니다. <br>
+        </p>
+        <p>
+            이 글씨는 <i>기울어진 글씨</i> 입니다. <br>
+            이 글씨는 <em>기울어진 글씨</em> 입니다. <br>
+        </p>
+        <p>
+            <del>취소선 입니다.</del>
+        </p>
+        <p>
+            이 글씨는 <i><b>굵은 기울어진 글씨</b></i> 입니다.
+        </p>
+
+    <!-- 목록/ ol(ordered list): 순서 있는/ ul(unordered list): 순서 없는 -->
+        <ol>
+            <li>첫번째</li>
+            <li>두번째</li>
+            <li>세번째</li>
+        </ol>
+        <ul style="list-style-type: square;">  <!-- square, none.. -->
+            <li>치킨</li>
+            <li>피자</li>
+            <li>햄버거</li>
+        </ul>
+
+        <!-- 링크 태그 -->
+        <a href="https://google.com" target="_blank">구글로 가자!</a> <!-- target="_blank": 새창에서 실행/ default는 _self -->
+        <a href="index2.html">Index 2로 가자!</a>
+        <a href="#header">header로 가자!</a> <!-- 동일 페이지내에서 해당 id로 이동-->
+        <a href="mailto:kwon0136@naver.com">메일 쓰기</a>
+
+        <!-- 미디어 파일 -->
+        <!-- 사진 -->
+        <img src="dog.jfif" alt="dog" width="100px" height="100px">  <!-- alt: 사진설명 -->
+
+        <!-- 비디오 -->
+        <!-- <video src=""></video> -->
+
+        <!-- iframe -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_FIbCOmrh14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <!-- Form -->
+        <form action="index2.html"> <!-- 제출 버튼(submit) 클릭했을 때, 이곳(action)으로 전송한다 -->
+            <input type="text" name="username"> <!-- 실제 값을 입력하는 곳/ name: 어떤 속성을 가지는지 표시 -->
+            <input type="password" name="password"> <!-- 입력값 보이지 않는다 -->
+            <input type="submit"> <!-- 제출 버튼 생성 -->
+        </form>
+
+    </body>
+</html>
+
+
+
+
