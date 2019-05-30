@@ -26,6 +26,10 @@ lunch = {'중국집': '02-1'
          , '냉면집': '02-3'
          }
 
+
+#lotto['key'] = v, 'key'가 없다면 에러
+#lotto.get('key') => 'key' 없으면 None
+
 for k in lunch :
     print(k, lunch[k])
     print(type(k))
@@ -42,4 +46,5 @@ print('##########items#########')
 for k,v in lunch.items():
     print(k,v)
     print(type(k),type(v))
+
 
