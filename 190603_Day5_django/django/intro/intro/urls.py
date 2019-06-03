@@ -30,6 +30,8 @@ urlpatterns = [
     path('birthday/<str:birthday>', views.isbirth),
     path('throw/', views.throw),
     path('catch/', views.catch),
+    path('lotto/', views.lotto),
+    path('get/', views.get),
     # str이 default이므로 <name>도 가능
     # path('hello<name>/', views.hello),
 ]

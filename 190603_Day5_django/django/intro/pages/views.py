@@ -93,3 +93,15 @@ def catch(request):
 
     context = {'message1': message1 , 'message2': message2}
     return render(request, 'catch.html', context)
+
+def get(request):
+    name = request.GET.get('name')
+    lotto = range(1,46)
+    nums = random.sample(lotto,6)
+
+    context = {'name' : name,
+               'nums' : nums}
+    return render(request, 'get.html', context)
+
+def lotto(request):
+    return render(request, 'lotto.html')
