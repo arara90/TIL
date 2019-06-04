@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    {% if res %}
+        <h1> 생일 축하합니다♥</h1>
+    {% else %}
+        <h1> 생일 아냐 </h1>
+    {% endif %}
+
+    <p> {{ dday }} </p>
+
+{% endblock %}
