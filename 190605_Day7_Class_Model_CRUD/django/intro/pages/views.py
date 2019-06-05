@@ -44,7 +44,6 @@ def template_language(request):
     empty_list = ['좌롸', '롸', '좌라']
     datatimenow = datetime.now()
     print(datatimenow)
-
     context = {
         'menus':menus,
         'my_sentence': my_sentence,

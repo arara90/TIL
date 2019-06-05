@@ -1,0 +1,14 @@
+{%extends 'boards/base.html'%}
+
+{% block body %}
+<h1 class="text-center"> Boards </h1>
+<hr>
+<a href="/boards/new/">[글작성]</a>
+
+<div class="col-11">
+{% for i in articles %}
+    <p> 제목 : {{ i.title }} - 내용 : {{ i.content }} </p>
+{% endfor%}
+</div>
+
+{% endblock %}
