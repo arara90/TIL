@@ -1,0 +1,16 @@
+{%extends 'boards/base.html'%}
+
+{%block body%}
+<p>글이 정상적으로 작성되었습니다.</p>
+<a href="/boards/">메인으로</a>
+
+    <div class="col-11">
+    {% for i in articles %}
+        <p> 제목 : {{ i.title }} - 내용 : {{ i.content }} </p>
+    {% endfor%}
+    </div>
+
+
+
+{%endblock%}
+
