@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h3> {{board.title}} </h3>
+최초작성 : {{board.created_at}}<br>
+최종수정 : {{board.updated_at}}<br>
+<hr>
+{{board.content}}
+<hr>
+
+<a href="/board/"> 메인으로 </a>
+<a href="/board/{{board.pk}}/edit"> 글수정 </a>
+<a href="/board/{{board.pk}}/delete/"> 글삭제 </a>

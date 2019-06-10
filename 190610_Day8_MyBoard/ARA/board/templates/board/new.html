@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{% block body %}
+    <h3 class="text-center">글작성</h3>
+    <hr>
+    <form action="/board/create/" method="post">
+        {% csrf_token %}
+        <label for="title"> 글제목 </label>
+        <input type="text" id="title" name="title" cols="30">
+        <br><br>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <input type="submit">
+    </form>
+
+{% endblock %}

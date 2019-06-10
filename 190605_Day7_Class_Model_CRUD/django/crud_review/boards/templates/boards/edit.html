@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{% block body %}
+
+<h2> 글쓰기 </h2>
+
+<form action="/boards/{{board.pk}}/update/", method="POST">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name = "title" id="title" value="{{board.title}}"><br>
+    <label for="content"> Content </label><br>
+    <textarea name="content" id="content" cols="30" rows="10">{{board.content}}</textarea><br>
+    <input type="submit">
+</form>
+
+{%endblock%}
