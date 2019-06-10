@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="center-block">
+<a href="/boards/new/">글쓰기</a>
+<hr>
+    <table style = "margin : 10px 20px 10px 20px">
+        <thead align="center">
+            <tr>
+                <td colspan="3">no</td>
+                <td colspan="30">글제목</td>
+            </tr>
+        </thead>
+
+        <tbody align="center">
+            {% for board in boards %}
+            <tr>
+                <td colspan="3">{{board.pk}}</td>
+                <td colspan="30"><a href="/boards/{{board.pk}}/"> {{board.title}}</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+{%endblock%}
+
+

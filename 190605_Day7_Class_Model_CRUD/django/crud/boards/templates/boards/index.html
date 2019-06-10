@@ -4,10 +4,13 @@
 <h1 class="text-center"> Boards </h1>
 <hr>
 <a href="/boards/new/">[글작성]</a>
-
+<hr>
 <div class="col-11">
 {% for i in articles %}
-    <p> 제목 : {{ i.title }} - 내용 : {{ i.content }} </p>
+    <p> 글번호 : {{ i.pk }} </p>
+    <p> 제목 : {{ i.title }} </p>
+    <a href="/boards/{{ i.pk }}">[상세보기]</a>
+    <hr>
 {% endfor%}
 </div>
 

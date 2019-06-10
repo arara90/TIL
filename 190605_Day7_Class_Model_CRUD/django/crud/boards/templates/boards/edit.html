@@ -1,0 +1,16 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+    <h1 class="text-center">EDIT</h1>
+    <hr>
+    <form action="/boards/{{board.pk}}/update/", method="POST">
+        {% csrf_token %}
+    <!--   method의 default는 GET이니까 생략해도 된다.     -->
+        <label for="title" >Title</label><br>
+        <input type="text" name="title" id="title" value = "{{ board.title }}"><br>
+        <label for="content">Content</label><br>
+        <textarea name="content" id="content" cols="30" rows="10"> {{ board.content }} </textarea><br>
+        <input type="submit" value="submit">
+    </form>
+    <a href="/boards">[메인페이지로]</a>
+{% endblock %}

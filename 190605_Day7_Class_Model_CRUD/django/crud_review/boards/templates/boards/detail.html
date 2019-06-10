@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+    <h3>제목 : {{ board.title }}</h3>
+    작성시각 : {{ board.created_at }} <br>
+    최종수정 : {{board.updated_at}}
+    <hr>
+    {{board.content}}
+    <br>
+    <hr>
+    <a href="/boards/">메인으로</a>
+    <a href="/boards/{{board.pk}}/edit/">글수정</a>
+    <a href="/boards/{{board.pk}}/delete/" onclick="return confirm('정말로 삭제하시겠습니까? ?');">글삭제</a>
+
+{% endblock %}
+
+
+
+
