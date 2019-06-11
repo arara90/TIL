@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h3> {{board.title}} </h3>
+최초작성 : {{board.created_at}}<br>
+최종수정 : {{board.updated_at}}<br>
+<hr>
+{{board.content}}
+<hr>
+
+<form action="{% url 'board:comments_create' board.pk %}" method="POST">
+    {%csrf_token%}
+    댓글 남기기 <input type="text" name="content" >
+    <input type="submit" value="댓글작성" >
+</form>
+
+<hr>
+    <p><b>댓글 목록</b></p>
+    {% for comment in comments %}
+    <li> {{ comment.content }}</li>
+    {% endfor %}
+<hr>
+
+<a href="{% url 'board:index' %}"> 메인으로 </a>
+<a href="{% url 'board:edit' board.pk %}"> 글수정 </a>
+<a href="{% url 'board:delete' board.pk %}"> 글삭제 </a>
+
+{% endblock %}

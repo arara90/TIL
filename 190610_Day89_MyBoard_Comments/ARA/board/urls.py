@@ -17,14 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
+app_name = 'board'
+
 urlpatterns = [
-    path('', views.index),
-    path('new/', views.new),
-    path('create/', views.create),
-    path('<int:pk>/', views.detail),
-    path('<int:pk>/edit/', views.edit),
-    path('<int:pk>/update/', views.update),
-    path('<int:pk>/delete/', views.delete)
-
-
+    path('', views.index, name='index'),
+    path('new/', views.new, name='new'),
+    path('<int:board_pk>/', views.detail, name='detail'),
+    path('<int:board_pk>/edit/', views.edit, name='edit'),
+    path('<int:board_pk>/delete/', views.delete, name='delete'),
+    path('<int:board_pk>/comments/', views.comments_create, name='comments_create')
 ]
+
+
