@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="" method="POST" >
+    {%csrf_token%}
+    제목 <input type="text" name="title"  style="margin-bottom:5px;" value = "{{board.title}}"><br>
+    <textarea name="content" id="content" cols="100" rows="10">{{board.content}}</textarea> <br>
+    <input type="submit" value="작성">
+</form>
+{% endblock %}

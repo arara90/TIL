@@ -1,0 +1,89 @@
+{%extends 'base.html'%}
+
+{% block body%}
+
+<script type="text/javascript">
+
+function submit(){
+     alert("hello")
+     var form = document.createElement("form");
+
+     form.setAttribute("charset", "UTF-8");
+     form.setAttribute("method", "Post");  //Post 방식
+     form.setAttribute("action", "/boards/{{comment.pk}}/edit_comment/"); //요청 보낼 주소
+
+     var hiddenField = document.createElement("input");
+     hiddenField.setAttribute("type", "text");
+     hiddenField.setAttribute("name", "content");
+     hiddenField.setAttribute("value", mName);
+     form.appendChild(hiddenField);
+
+     hiddenField = document.createElement("input");
+     hiddenField.setAttribute("type", "submit");
+     hiddenField.setAttribute("value", "수정완료");
+     form.appendChild(hiddenField);
+
+     document.body.appendChild(form);
+     form.submit();
+}
+</script>
+
+
+<div class="detail-header">
+    <h3 style="float:left">  {{board.title}} </h3>
+    <div>
+        <form action="/boards/{{board.pk}}/edit/" method="GET" style="float:left; margin: 0px 5px 0px 5px;">
+            <input type="submit" value="수정">
+        </form>
+
+        <form action="/boards/{{board.pk}}/delete/" method="POST" style="margin-right: 10px;">
+            {%csrf_token%}
+            <input type="submit" value="삭제">
+        </form>
+    </div>
+    <p> created at : {{board.updated_at}} / updated at : {{board.created_at}} </p>
+
+
+
+</div>
+
+
+<div style = "margin : 10px 10px 10px 10px">
+    {{board.content}}
+</div>
+
+<hr>
+<div class="comments-container" style = "margin: 10px 10px 10px 10px;">
+
+<!--    댓글 작성    -->
+    <div>
+        <form action = "/boards/{{board.pk}}/new_comment/" method = "POST" style = "margin: 0px 5px 10px 10px;">
+            {%csrf_token%}
+            <input type="text" name="content">
+            <input type="submit" value="댓글작성">
+        </form>
+    </div>
+
+<!--    댓글 목록    -->
+    <div class="comments">
+        {% for comment in comments %}
+        <div class="comment" style="margin: 0px 0px 10px 15px;" >
+                <p style="float:left; margin: 0px 10px 5px 0px"> {{comment.content}} </p>
+                <button style="float:left; margin: 0px 10px 5px 0px" onclick="submit()">수정</button>
+                <form action="/boards/{{comment.pk}}/delete_comment/" method="POST">
+                    {%csrf_token%}
+                    <input type="submit" value="삭제">
+                </form>
+        </div>
+
+        {% empty %}
+            댓글이 없습니다.
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<a href="/boards/">메인으로</a>
+
+{% endblock %}

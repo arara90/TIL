@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block body %}
+
+<a href="/boards/new/">글쓰기</a>
+
+     {% for board in boards%}
+          <li>{{board.pk}} <a href="/boards/{{board.pk}}/">{{board.title}} ({{board.comment_set.all|length}})</a> </li>
+     {% empty %}
+     {% endfor %}
+
+{% endblock %}
