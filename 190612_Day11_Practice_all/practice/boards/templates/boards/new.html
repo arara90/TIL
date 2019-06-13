@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<form action="/boards/new/" method="POST" >
+<form action="/boards/new/" method="POST" enctype="multipart/form-data" >
     {%csrf_token%}
     제목 <input type="text" name="title"  style="margin-bottom:5px; width=80"><br>
     <textarea name="content" id="content" cols="100" rows="10"></textarea> <br>
+    <label for="Image">Image</label><br>
+    <input type="file" name="image" id="image" accept="image/*">
     <input type="submit" value="작성">
 </form>
 {% endblock %}

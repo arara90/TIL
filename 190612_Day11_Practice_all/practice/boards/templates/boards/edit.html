@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
-
 {% block body %}
-<form action="" method="POST" >
+
+<h2>Edit</h2>
+<hr>
+
+{% if board.image %}
+    <p><b>기존이미지</b></p>
+    <img src= "{{ board.image.url }}" alt="{{board.image}}">
+{% endif%}
+
+<form action="" method="POST" enctype="multipart/form-data">
     {%csrf_token%}
-    제목 <input type="text" name="title"  style="margin-bottom:5px;" value = "{{board.title}}"><br>
+    제목 <input type="text" name="title"  style="margin-bottom:5px;" value = "{{board.title}}" ><br>
     <textarea name="content" id="content" cols="100" rows="10">{{board.content}}</textarea> <br>
+    <label for="image"> Image </label>
+    <input type="file" name="image" id="image" accept="image/*">
     <input type="submit" value="작성">
 </form>
 {% endblock %}

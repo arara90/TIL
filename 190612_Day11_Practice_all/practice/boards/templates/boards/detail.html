@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-
+{% load static %}
 {% block body%}
 
 <script type="text/javascript">
@@ -29,7 +29,7 @@ function submit(){
 </script>
 
 
-<div class="detail-header">
+<div class="detail-header" style = "padding: 10px; margin:10px; border : 1px solid gray">
     <h3 style="float:left">  {{board.title}} </h3>
     <div>
         <form action="/boards/{{board.pk}}/edit/" method="GET" style="float:left; margin: 0px 5px 0px 5px;">
@@ -43,17 +43,22 @@ function submit(){
     </div>
     <p> created at : {{board.updated_at}} / updated at : {{board.created_at}} </p>
 
-
-
 </div>
 
 
-<div style = "margin : 10px 10px 10px 10px">
+<div style = "margin : 0px 10px 10px 10px; border : 1px solid gray;  padding: 5px; ">
     {{board.content}}
+    <br>
+<!--  image  -->
+    {% if board.image %}
+        <h3>원본 이미지</h3>
+        <img src= "{{ board.image.url }}" alt="{{board.image}}">
+        <h3>썸네일 이미지</h3>
+        <img src= "{{ board.image_thumbnail.url }}" alt="{{board.thumbnail}}">
+    {% endif%}
 </div>
 
-<hr>
-<div class="comments-container" style = "margin: 10px 10px 10px 10px;">
+<div class="comments-container" style = "margin : 10px 10px 10px 10px; border : 1px solid gray;  padding: 5px; ">
 
 <!--    댓글 작성    -->
     <div>
@@ -84,6 +89,6 @@ function submit(){
 
 </div>
 
-<a href="/boards/">메인으로</a>
+<p class ="text-center"> <a href="/boards/">메인으로</a> </p>
 
 {% endblock %}

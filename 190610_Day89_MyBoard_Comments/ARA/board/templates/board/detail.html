@@ -15,10 +15,16 @@
 </form>
 
 <hr>
-    <p><b>댓글 목록</b></p>
+    <p><b>댓글 목록 | 현재댓글개수 {{comments|length}}</b></p>
     {% for comment in comments %}
-    <li> {{ comment.content }}</li>
+    <li> {{ comment.content }}
+        <a href="{% url 'board:comments_edit' board.pk comment.pk %}"> 수정 </a>
+        <a href="{% url 'board:comments_delete' board.pk comment.pk %}"> 삭제 </a>
+    </li>
+    {% empty %}
+        댓글이 없습니다.
     {% endfor %}
+
 <hr>
 
 <a href="{% url 'board:index' %}"> 메인으로 </a>

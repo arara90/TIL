@@ -12,7 +12,8 @@ def new(request):
         print('POST')
         title = request.POST.get('title')
         content = request.POST.get('content')
-        board = Board(title=title, content=content)
+        image = request.FILES.get('image')
+        board = Board(title=title, content=content, image=image)
         board.save()
         # redirect는 url을 찾아간다! 어디url? project url먼저!
         return redirect(f'/boards/{board.pk}')
@@ -34,10 +35,15 @@ def edit(request, pk):
     if request.method == 'POST':
         title = request.POST.get('title')
         content = request.POST.get('content')
+        image = request.FILES.get('image')
+        print(image)
 
         board.title = title
         board.content = content
+        board.image = image
+
         board.save()
+
         return redirect(f'/boards/{pk}')
 
     else:
