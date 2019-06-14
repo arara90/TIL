@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1 class="text-center">Comment edit</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        수정 : <input type="text" name="content" value="{{ comment.content }}">
+        <input type="submit" value ="댓글수정">
+    </form>
+{% endblock %}

@@ -1,6 +1,10 @@
 {% extends 'base.html'%}
+{% load static %}
 {% block body %}
+<h1> INDEX </h1>
 
+<img src="{% static 'boards/images/1.jpg' %}" alt="bunny">
+<br>
 <a href="/boards/new/">글쓰기</a>
 
      {% for board in boards%}
