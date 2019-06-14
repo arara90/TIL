@@ -18,11 +18,11 @@
          http://127.0.0.1:8000/**action**/?**name**=value
       
    * **POST?**
-   
+
      1) Forbidden(403) error! 
-   
+
      * CSRF 토큰을 통한 검증이 필요하다!
-   
+
        ```html
        <body>
            <form action="/user_create/" method="POST">
@@ -33,7 +33,9 @@
            </form>
        </body>
        ```
-   
+
      * 개발자 모드에서 확인해보면?
-   
-       ![개발자모드](C:\Users\multicampus\TIL\190603_Day5_django\img.PNG)
+
+       ![개발자모드](.\imgs\3_form\img.PNG)
+
+       

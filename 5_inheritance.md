@@ -72,9 +72,9 @@ TEMPLATES = [
 
 결과
 
-![상속](C:\Users\multicampus\TIL\190603_Day5_django\base.PNG)
+![상속](.\imgs\5_inheritance\base.PNG)
 
-![](C:\Users\multicampus\TIL\190603_Day5_django\dev2.PNG)
+![](.\imgs\5_inheritance\\dev2.PNG)
 
 
 

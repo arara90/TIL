@@ -21,7 +21,7 @@
 
 2. **comment** 
 
-![](C:\Users\multicampus\TIL\imgs\comment1.PNG)
+![](.\imgs\7_Comment\comment1.PNG)
 
 
 

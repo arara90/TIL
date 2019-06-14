@@ -1,12 +1,12 @@
-1.  새 **프로젝트** 시작
+1. 새 **프로젝트** 시작
 
    * django 폴더에서 **django-admin startproject crud**
 
-2.  **APP** 생성
+2. **APP** 생성
 
    * crud로 이동해서 **python manage.py startapp boards**
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\structure.PNG)
+     ![](.\imgs\6_Model_CRUD\structure.PNG)
 
    * django 폴더내에 crud 프로젝트와 intro 프로젝트(기존에 있던것, 해당문서에서 만들지 않았음)가 있는 상태
 
@@ -22,7 +22,7 @@
        LANGUAGE_CODE = 'ko-kr'
        TIME_ZONE = 'Asia/Seoul'
        ```
-  
+     
      * base.html (프로젝트내 모든 APP에 적용할 templates BASE_DIR 설정) : 
      
        >  'DIRS': [os.path.join(BASE_DIR, 'Project명', 'templates')]
@@ -46,7 +46,7 @@
        
        ```
      
-       ![base.html의 위치](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\base.PNG)
+       ![base.html의 위치](.\imgs\6_Model_CRUD\base.PNG)
      
        기본 project 폴더내에 templates 디렉토리를 만들고 그 안에 base.html
      
@@ -78,7 +78,7 @@ Migrations for 'boards':
 
    - **Create model Board**
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\migrations.PNG)
+     ![](.\imgs\6_Model_CRUD\migrations.PNG)
 
 ```python
 #migration > 0001_initial.py확인
@@ -133,7 +133,7 @@ Migrations for 'boards':
 
 ```
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\migrations2.PNG)
+![](.\imgs\6_Model_CRUD\migrations2.PNG)
 
 
 
@@ -149,7 +149,7 @@ Migrations for 'boards':
 
 **명령어 : python manage.py shell**
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\shell.PNG)
+![](.\imgs\6_Model_CRUD\shell.PNG)
 
 1. **object 매니저**
 
@@ -160,7 +160,7 @@ Migrations for 'boards':
 
    : objects는 object를 관리하는 매니저 / DB와 통신하게 해줌 (통역사) 
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\shell2.PNG)
+![](.\imgs\6_Model_CRUD\shell2.PNG)
 
 2. **객체 생성**
 
@@ -189,7 +189,7 @@ Migrations for 'boards':
 
      다시 board를 입력해보면 <Board: Board object (1)> 로 실제 반영된 것을 알 수 있다.
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\save.PNG)
+     ![](.\imgs\6_Model_CRUD\save.PNG)
 
      
 
@@ -201,23 +201,23 @@ Migrations for 'boards':
 
   2) board = Board(title='second',content ='django!') -> board.save()
 
-  ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\board2.PNG)
+  ![](.\imgs\6_Model_CRUD\board2.PNG)
 
   3)  Board.objects.create(title='third', content = 'django')
 
   * objects를 이용하면 바로 반영된다. (?)
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\board3.PNG)
+![](.\imgs\6_Model_CRUD\board3.PNG)
 
 ​			but, board 치면 다시 -1????? 근데 Board.objects.all() 해보면 잘 들어가 있음. 
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\board4.PNG)
+![](.\imgs\6_Model_CRUD\board4.PNG)
 
 
 
 ​			Board.objects.all()  : QuerySet의 형태로 반환
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\board5.PNG)		
+![](.\imgs\6_Model_CRUD\board5.PNG)		
 
 
 
@@ -229,7 +229,7 @@ Migrations for 'boards':
 >>> board.full_clean()
 ```
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\board6.PNG)
+![](.\imgs\6_Model_CRUD\board6.PNG)
 
 ## 
 
@@ -264,7 +264,7 @@ Migrations for 'boards':
    Board.objects.all() # = select * from boards
    ```
 
-   ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\read1.PNG)
+   ![](.\imgs\6_Model_CRUD\read1.PNG)
 
 
 
@@ -283,28 +283,28 @@ Migrations for 'boards':
 
      <QuerySet [<Board: 1번글 - first : django>, <Board: 5번글 - first : hahahah>]>
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\read3.PNG)
+     ![](.\imgs\6_Model_CRUD\read3.PNG)
 
      
 
    2) objects.**get(pk=1)**
 
-   ​			![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\get.PNG)
+   ​			![](.\imgs\6_Model_CRUD\get.PNG)
 
    * **.get() 은 1개의 반환값만을 갖기때문에 unique한 값으로 필터할때 사용하도록 한다.**
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\get2.PNG)
+     ![](.\imgs\6_Model_CRUD\get2.PNG)
 
    3) get 과 filter의 차이
 
-   ​		![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\getfilter.PNG)
+   ​		![](.\imgs\6_Model_CRUD\getfilter.PNG)
 
 
 
 4. **함수 사용**
    * board = Board.objects.filter(title='first').first()
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\read4.PNG)
+![](.\imgs\6_Model_CRUD\read4.PNG)
 
 ​		* .first()  /  .last()
 
@@ -320,11 +320,11 @@ Migrations for 'boards':
 
    * 인덱싱 : board=Board.objects.all()[2]
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\index.PNG)
+     ![](.\imgs\6_Model_CRUD\index.PNG)
 
    * 슬라이싱 : board=Board.objects.all()[1:3]
 
-     ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\slicing.PNG)
+     ![](.\imgs\6_Model_CRUD\slicing.PNG)
 
 
 
@@ -342,7 +342,7 @@ Migrations for 'boards':
 >>> board.save()
 ```
 
-#### ![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\update.PNG)
+#### ![](.\imgs\6_Model_CRUD\update.PNG)
 
 
 
@@ -357,7 +357,7 @@ Migrations for 'boards':
 >>> board.delete()
 ```
 
-![](C:\Users\multicampus\TIL\190605_Day7_Class_Model_CRUD\imgs\delete.PNG)
+![](.\imgs\6_Model_CRUD\delete.PNG)
 
 ​	* 얘는 .save()를 안해도 되네?
 

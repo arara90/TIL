@@ -58,7 +58,7 @@ views에서 html render를 위해 templates을 뒤질때 installed_apps 순서�
 
 ​	1) template에 앱의 이름과 동일한 directory를 더 만들어 준다.
 
-![이름공간분리](C:\Users\multicampus\TIL\190603_Day5_django\directory.PNG)
+![이름공간분리](.\imgs\4_namespace\directory.PNG)
 
 
 
@@ -164,7 +164,7 @@ join -> list를 문자열로
 
 결과
 
-![상속](C:\Users\multicampus\TIL\190603_Day5_django\base.PNG)
+![상속](.\imgs\4_namespace\base.PNG)
 
 
 
