@@ -1,0 +1,30 @@
+{% extends 'boards/base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+
+<!-- resolver_match : urls 의 name == create -->
+{% if request.resolver_match.url_name == 'create' %}
+    <h1>CREATE</h1>
+{% else %}
+    <h1>UPDATE</h1>
+{% endif %}
+    <hr>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        {% bootstrap_button "글작성" button_type='submit' button_class='btn_primary' %}
+<!--   p 태그로 form을 만들어주세요!     -->
+<!--        {{ form.as_p }}-->
+
+        <input type="submit" value="Submit" button_class='btn_primary'>
+    </form>
+<hr>
+
+{% if request.resolver_match.url_name == 'create' %}
+<a href="{% url 'boards:index' %}" class = "btn btn_primary">[메인 페이지]</a>
+{% else %}
+<a href="{% url 'boards:detail' board.pk %}" class = "btn btn_primary">[글 상세]</a>
+{% endif %}
+
+{% endblock %}
