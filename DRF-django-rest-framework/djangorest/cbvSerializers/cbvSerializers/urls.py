@@ -1,4 +1,4 @@
-"""fbvSerializers URL Configuration
+"""cbvSerializers URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fbvApp import views
-
+from cbvApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('students/', views.student_list),
-    path('students/<int:pk>', views.student_detail),
+    path('students/', views.StudentList.as_view()),
+    path('students/<int:pk>', views.StudentDetail.as_view())
 ]
